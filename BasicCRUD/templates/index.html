@@ -32,9 +32,9 @@
                             <td scope="col">{{ task.content }}</td>
                             <td scope="col">{{ task.date_created.date() }}</td>
                             <td scope="col" class="text-end">
-                                <a href="/delete/{{task.id}}">Delete</a>
-                                <br />
-                                <a href="/update/{{task.id}}">Update</a>
+                                <a href="/delete/{{task.id}}" class="text-dark text-decoration-none p-2"><button type="button" class="btn btn-light">Delete&nbsp;</button></a>
+                                <br /><div class="py-1"></div>
+                                <a href="/update/{{task.id}}" class="text-dark text-decoration-none p-2"><button type="button" class="btn btn-light">Update</button></a>
                             </td>
                         </tr>
                     {% endfor %}
