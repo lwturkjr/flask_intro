@@ -1,10 +1,50 @@
 {% extends "base.html" %}
 
 {% block head %}
-
+<title>Learn Flask for Python - Full Tutorial</title>
 {% endblock %}
 
 {% block body %}
-<h1 class="fw-bold text-center">Template</h1>
+<!-- Header -->
+<section class="bg-dark bg-gradient p-3">
+    <div class="container text-light text-center">
+        <h1 class="fw-bold">Task Master</h1>
+    </div>   
+</section>
+<!-- Table -->
+<section class="bg-secondary bg-gradient p-2">
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <th scope="col">Task</th>
+                        <th scope="col">Added</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in tasks %}
+                        <tr>
+                            <td scope="col">{{ task.content }}</td>
+                            <td scope="col">{{ task.date_created.date() }}</td>
+                            <td scope="col" class="text-end">
+                                <a href="/delete/{{task.id}}">Delete</a>
+                                <br />
+                                <a href="">Update</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="row text-center p-2">
+            <form action="/" method="POST">
+                <input type="text" name="content" id="content" class="w-75"/>
+                <input type="submit" value="Add Task" />
+            </form>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
