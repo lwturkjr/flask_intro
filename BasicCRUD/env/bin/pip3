@@ -1,4 +1,4 @@
-#!/home/lwturkjr/stuff/git/flask_intro/BasicCRUD/env/bin/python
+#!/home/lwturkjr/git/flask_intro/BasicCRUD/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
