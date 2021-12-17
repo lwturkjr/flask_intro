@@ -10,7 +10,11 @@ html{
     font-family: OpenSansCondensedRegular;
     src: url(./fonts/OpenSansCondensedRegular.ttf);
  }
- @font-face {
+@font-face {
     font-family: OpenSansCondensedBold;
     src: url(./fonts/OpenSansCondensedBold.ttf);
- } 
+} 
+
+.text-shadow {
+    text-shadow: 2px 2px #000000;
+}

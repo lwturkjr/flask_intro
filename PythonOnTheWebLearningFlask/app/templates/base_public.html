@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
+    <script>
+        document.documentElement.classList.remove("no-js");
+    </script>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +20,8 @@
         
         {% block head %}{% endblock %}
     </head>
-    <body class="bg-dark">
+    <body class="bg-dark container">
         {% block body %}{% endblock %}
     </body>
+
 </html>
