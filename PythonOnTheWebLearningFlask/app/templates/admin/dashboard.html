@@ -1,22 +1,15 @@
-{% extends "base_admin.html" %}
+{% extends "admin/templates/base_admin.html" %}
 
 {% block head %}
-<title>Python On The Web Learning Flask</title>
+<title>Python On The Web Learning Flask - Admin Dashboard</title>
 {% endblock %}
 
 {% block body %}
 <!-- Header -->
-<section class="bg-secondary bg-gradient p-3 text-shadow">
-    <div class="container text-light text-center">
-        <h1 class="fw-bold">Admin Dashboard</h1>
-    </div>   
-</section>
 <!-- Main Body -->
-<section class="container bg-dark text-light text-center rounded">
-    <div style="height:800px;">
-        <p class="fw-bold p-3 ">This is the Admin dashboard.</p>
+<section class="container-fluid bg-dark text-light text-center rounded">
+    <div style="height:150vh;">
+        <h1 class="fw-bold p-3 ">This is the Admin Dashboard</h1>
     </div>
 </section>
-
-
 {% endblock %}

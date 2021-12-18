@@ -1,20 +1,17 @@
-{% extends "base_public.html" %}
+{% extends "public/templates/base_public.html" %}
 
 {% block head %}
-<title>Python On The Web Learning Flask</title>
+<title>Python On The Web Learning Flask - Public Index</title>
 {% endblock %}
 
 {% block body %}
 <!-- Header -->
-<section class="bg-transparent p-3 text-center text-shadow">
-    <div class="container text-light">
-        <h1 class="fw-bold">Index</h1>
-    </div>   
-</section>
+
 <!-- Main Body -->
 <section class="bg-secondary text-dark text-center rounded">
-    <div class="container" style="height:150vh;">
-        <p class="fw-bold p-3">This is the index.</p>
+    <div class="container-fluid" style="height:150vh;">
+        <h1 class="fw-bold p-3">This is the Public Index</h1>
+        <img class="w-75" src="{{ url_for('static', filename='img/flask_logo.png')}}">
     </div>
 </section>
 {% endblock %}
