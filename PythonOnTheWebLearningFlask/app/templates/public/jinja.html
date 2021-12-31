@@ -1,0 +1,161 @@
+{% extends "public/templates/base_public.html" %}
+{% import "macros/input_macros.html" as im %}
+
+
+{% block head %}
+<title>Python On The Web Learning Flask - Jinja</title>
+{% endblock %}
+
+{% block body %}
+
+<section class="bg-light text-dark rounded text-center">
+    <div class="container">
+        <h1 class="fw-bold p-3">Jinja Templates</h1>
+        <hr />
+
+        <section class="text-start py-2">
+            <h4>Variables</h4>
+            <hr />
+            <p>
+                Name: {{ my_name }}
+            </p>
+        </section>
+        <section class="text-start py-2">
+            <h4>Looping</h4>
+            <hr />
+            <ul>
+                {% for lang in langs %}
+                <li>{{ lang }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="text-start py-2">
+            <h4>Looping with index</h4>
+            <hr />
+            <ul>
+                {% for lang in langs %}
+                <li>{{ loop.index }}: {{ lang }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="text-start py-2">
+            <h4>Looping a dict</h4>
+            <hr />
+            <ul>
+                {% for k, v in friends.items() %}
+                <li>{{ k }}: {{ v }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="text-start py-2">
+            <h4>Looping a dict keys</h4>
+            <hr />
+            <ul>
+                {% for k in friends.keys() %}
+                <li>{{ k }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="text-start py-2">
+            <h4>Access list member</h4>
+            <hr />
+            <p>{{ langs[0] }}</p>
+        </section>
+        <section class="text-start py-2">
+            <h4>Access dict member</h4>
+            <hr />
+            <p>{{ friends["Tom"] }}</p>
+        </section>
+        <section class="text-start py-2">
+            <h4>Access class attribute</h4>
+            <hr />
+            <p>{{ my_remote.name }}</p>
+        </section>
+        <section class="text-start py-2">
+            <h4>Unpack variables</h4>
+            <hr />
+            {% set a, b = colours %}
+            <p>{{ a }}</p>
+            <p>{{ b }}</p>
+        </section>
+        <section class="text-start py-2">
+            <h4>Call a function</h4>
+            <hr />
+            <p>{{ repeat("FLASK IS AWESOME", 10) }}</p>
+        </section>
+        <section class="text-start py-2">
+            <h4>Call a class method</h4>
+            <hr />
+            <p>{{ my_remote.clone() }}</p>
+        </section>
+        <section class="text-start py-2">
+            <h4>Conditionals</h4>
+            <hr />
+            {% if cool %}
+                <p>Cool is {{ cool }}</p>
+            {% else %}
+                <p>Not Cool</p>
+            {% endif %}
+        </section>
+        <section class="text-start py-2">
+            <h4>Comparisions</h4>
+            <hr />
+            {% if age < 18 %}
+                <p>No entry</p>
+            {% elif age < 26 %}
+                <p>Nearly old enough</p>
+            {% else %}
+                <p>You may enter</p>
+            {% endif %}
+        </section>
+        <section class="text-start py-2">
+            <h4>Math</h4>
+            <hr />
+            <p>{{ age / 2 }}</p>
+        </section>
+        <section class="text-start py-2">
+            <h4>Template Filters</h4>
+            <hr />
+            <p>{{ friends|length }}</p>
+            <p>{{ my_name|reverse }}</p>
+            <p>{{ my_name|upper }}</p>
+        </section>
+        <section class="text-start py-2">
+            <h4>Template Filters - Join</h4>
+            <hr />
+            <p>{{ langs|join(", ") }}</p>
+        </section>
+        <section class="text-start py-2">
+            <h4>Custom Filters</h4>
+            <hr />
+            <p>{{ date|clean_date }}</p>
+        </section>
+        <section class="text-start py-2">
+            <h4>Escaping</h4>
+            <hr />
+            {{ my_html|safe }}
+        </section>
+        <section class="text-start py-2">
+            <h4>Suspicious</h4>
+            <hr />
+            {{ suspicious }}
+        </section>
+        <section class="text-start py-2">
+            <h4>Macros</h4>
+            <hr />
+            {{ im.input(label="Your Name", name="name", id="name", placeholder="Please enter your name") }}
+
+            {{ im.input(label="Age", type="number", name="age", id="age", placeholder="Please enter your age") }}
+
+            {{ im.input(label="Password", type="password", name="password", id="password", placeholder="Please enter a password") }}
+        </section>
+
+
+
+
+
+
+    </div>
+</section>
+
+{% endblock %}
