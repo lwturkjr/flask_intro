@@ -1,2 +1,1 @@
-PythonOnTheWebLearningFlask/env/
-BasicCRUD/env/
+env/ .vscode/ __pycache__/
